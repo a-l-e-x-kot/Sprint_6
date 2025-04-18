@@ -13,6 +13,10 @@ class TestOrderPage:
     @pytest.mark.parametrize('button, test_data', [(HomePageLocators.button_order_header, TestData.test_data_one), (HomePageLocators.button_order_main_page, TestData.test_data_two)])
     def test_order_all_fields_success(self, driver, button, test_data):
         order_page = OrderPage(driver)
+
+        order_page.wait_visibility_cookie()
+        order_page.close_cookie_window()
+
         order_page.scroll_to_element(button)
         order_page.wait_element_is_visible(button)
         order_page.click_element(button)
