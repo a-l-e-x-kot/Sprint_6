@@ -6,6 +6,14 @@ from data import TestData
 
 class OrderPage(BasePage):
 
+    @allure.step('Ожидание появления окна куки')
+    def wait_visibility_cookie(self):
+        self.wait_element_is_visible(OrderPageLocators.cookie_button)
+
+    @allure.step('Закрытие окна куки')
+    def close_cookie_window(self):
+        self.click_element(OrderPageLocators.cookie_button)
+
     @allure.step('Клик на станцию метро')
     def select_subway_station(self):
         self.click_element(OrderPageLocators.select_item_in_multiselect)
