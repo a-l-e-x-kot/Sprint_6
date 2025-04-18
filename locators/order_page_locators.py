@@ -24,3 +24,6 @@ class OrderPageLocators:
 
     button_confirm_order = (By.XPATH, "//button[text()='Да']")
     button_check_status_order = (By.XPATH, ".//*[text()='Посмотреть статус']")
+
+    # Кнопка "Принять куки"
+    cookie_button = (By.ID, 'rcc-confirm-button')
