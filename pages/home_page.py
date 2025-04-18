@@ -5,6 +5,15 @@ from pages.base_page import BasePage
 
 class HomePage(BasePage):
 
+
+    @allure.step('Ожидание появления окна куки')
+    def wait_visibility_cookie(self):
+        self.wait_element_is_visible(HomePageLocators.cookie_button)
+
+    @allure.step('Закрытие окна куки')
+    def close_cookie_window(self):
+        self.click_element(HomePageLocators.cookie_button)
+
     @allure.step('Ожидание загрузки кнопки "Заказать" в хедере')
     def wait_button_order_in_header_is_visible(self):
         self.wait_element_is_visible(HomePageLocators.button_order_header)
